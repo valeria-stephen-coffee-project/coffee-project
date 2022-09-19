@@ -4,10 +4,13 @@ html {
 
 *, *:before, *:after {
     box-sizing: inherit;
+    font-family: 'Open sans', sans-serif;
+    color: navajowhite;
 }
 
 body {
     position: relative;
+
     /*margin: 0;*/
     /*overflow: hidden;*/
 }
@@ -19,9 +22,6 @@ main {
 }
 
 
-/*.navbar {*/
-/*    padding-top: 2rem;*/
-/*}*/
 
 #coffeeDisplay{
     margin-right: 0;
@@ -29,10 +29,28 @@ main {
 }
 
 .overlay {
-    background-color: #e6e6e6;
+    /*background-color: #e6e6e6;*/
     z-index: 10;
     position: relative;
-    opacity: 0.75;
+    /*opacity: 0.75;*/
+    /*background: rgba(131, 124, 127, 0);*/
+}
+
+.navbar-collapse {
+    /*background-image: linear-gradient(to right, rgba(161,106,58,0), rgba(161,106,58,1));*/
+    background-image: linear-gradient(to right, black, white, saddlebrown);
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.black-text {
+    color: black;
+}
+/*span.display-3 {*/
+/*    color: navajowhite;*/
+/*}*/
+
+.card-body {
 }
 
 table {

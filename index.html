@@ -5,6 +5,9 @@
     <title>Coffee Project</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="img/coffee-cup-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@554&display=swap" rel="stylesheet">
 
 <!--    Fonts-->
     <link rel=“preconnect” href=“https://fonts.googleapis.com”>
@@ -20,7 +23,7 @@
 
 <main>
     <!-- Top nav bar-->
-    <nav class="navbar bg-light overlay">
+    <nav class="navbar overlay">
         <div class="container-fluid">
             <span class="display-3">Coffee!</span>
 
@@ -37,20 +40,20 @@
             <!-- Drop down for type of roast & text search for coffee name -->
             <div class="collapse navbar-collapse" id="orderText">
                 <form class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <label for="roast-selection" class="overlay">Roast</label>
+                    <label for="roast-selection">Roast</label>
 
                     <!-- Filtering with change event listener in main.js -->
-                    <select id="roast-selection" class="overlay" autocomplete="off">
+                    <select id="roast-selection" class= "black-text" autocomplete="off">
                         <option>all</option>
                         <option>light</option>
                         <option>medium</option>
                         <option>dark</option>
                     </select>
 
-                    <label for="coffee-name" class="overlay pt-3">Coffee Name</label>
+                    <label for="coffee-name" class="pt-3">Coffee Name</label>
 
                     <!-- Filtering with keyup event listener in main.js -->
-                    <input id="coffee-name" type="text" placeholder="Coffee Name" autocomplete="off">
+                    <input id="coffee-name" type="text" class= "black-text" placeholder="Coffee Name" autocomplete="off">
                 </form>
             </div>
 
@@ -60,7 +63,7 @@
                     <label for="add-roast-selection" class="overlay">Roast</label>
 
                     <!-- Filtering with change event listener in main.js -->
-                    <select id="add-roast-selection" class="overlay" autocomplete="off">
+                    <select id="add-roast-selection" class="black-text" autocomplete="off">
                         <option>light</option>
                         <option>medium</option>
                         <option>dark</option>
@@ -69,7 +72,7 @@
                     <label for="add-coffee-name" class="overlay pt-3">Coffee Name</label>
 
                     <!-- Filtering with keyup event listener in main.js -->
-                    <input id="add-coffee-name" type="text" placeholder="Coffee Name" autocomplete="off">
+                    <input id="add-coffee-name" class= "black-text"type="text" placeholder="Coffee Name" autocomplete="off">
 
                     <button id="add-coffee-btn" class="btn btn-primary">Add</button>
                 </form>
