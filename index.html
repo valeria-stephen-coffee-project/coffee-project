@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Coffee Project</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="img/coffee-cup-icon.png">
@@ -25,21 +26,22 @@
     <!-- Top nav bar-->
     <nav class="navbar overlay">
         <div class="container-fluid">
-            <span class="display-3">Coffee!</span>
+            <span class="display-3">COFFEE</span>
 
             <!-- Navbar buttons -->
             <div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#orderText" aria-controls="orderText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span>Order online</span>
+                    <span>ORDER</span>
                 </button>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#addText" aria-controls="addText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span>Add a Coffee</span>
+                    <span>ADD</span>
                 </button>
             </div>
 
             <!-- Drop down for type of roast & text search for coffee name -->
             <div class="collapse navbar-collapse" id="orderText">
-                <form class="navbar-nav me-auto mb-2 mb-lg-0">
+                <div class="text-center my-2">
+<!--                <form class="navbar-nav me-auto mb-2 mb-lg-0">-->
                     <label for="roast-selection">Roast</label>
 
                     <!-- Filtering with change event listener in main.js -->
@@ -50,32 +52,36 @@
                         <option>dark</option>
                     </select>
 
-                    <label for="coffee-name" class="pt-3">Coffee Name</label>
+<!--                    <label for="coffee-name" class="pt-3">Coffee Name</label>-->
 
                     <!-- Filtering with keyup event listener in main.js -->
                     <input id="coffee-name" type="text" class= "black-text" placeholder="Coffee Name" autocomplete="off">
-                </form>
+<!--                </form>-->
+                </div>
             </div>
 
             <!-- Drop down for adding a coffee -->
             <div class="collapse navbar-collapse" id="addText">
-                <form class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <label for="add-roast-selection" class="overlay">Roast</label>
+                <div class="d-flex justify-content-center align-items-center">
+<!--                <form class="navbar-nav me-auto mb-2 mb-lg-0">-->
+
+                    <label for="add-roast-selection" class="ms-1 d-none d-sm-block">Roast</label>
 
                     <!-- Filtering with change event listener in main.js -->
-                    <select id="add-roast-selection" class="black-text" autocomplete="off">
+                    <select id="add-roast-selection" class="black-text ms-1" autocomplete="off">
                         <option>light</option>
                         <option>medium</option>
                         <option>dark</option>
                     </select>
 
-                    <label for="add-coffee-name" class="overlay pt-3">Coffee Name</label>
+<!--                    <label for="add-coffee-name" class="overlay pt-3">Coffee Name</label>-->
 
                     <!-- Filtering with keyup event listener in main.js -->
-                    <input id="add-coffee-name" class= "black-text"type="text" placeholder="Coffee Name" autocomplete="off">
+                    <input id="add-coffee-name" class= "black-text ms-1" type="text" placeholder="Coffee Name" autocomplete="off">
 
-                    <button id="add-coffee-btn" class="btn btn-primary">Add</button>
-                </form>
+                    <button id="add-coffee-btn" class="btn btn-light ms-1">Add</button>
+<!--                </form>-->
+                </div>
             </div>
         </div>
     </nav>

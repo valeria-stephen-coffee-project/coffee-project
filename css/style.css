@@ -38,9 +38,9 @@ main {
 
 .navbar-collapse {
     /*background-image: linear-gradient(to right, rgba(161,106,58,0), rgba(161,106,58,1));*/
-    background-image: linear-gradient(to right, black, white, saddlebrown);
-    padding: 5px;
-    border-radius: 8px;
+    /*background-image: linear-gradient(to right, black, white, saddlebrown);*/
+    /*padding: 5px;*/
+    /*border-radius: 8px;*/
 }
 
 .black-text {
@@ -50,18 +50,32 @@ main {
 /*    color: navajowhite;*/
 /*}*/
 
-.card-body {
+.card {
+    background-image: url("/img/milk-coffee-pic.jpg");
+    background-size: cover;
+    /*opacity: .75;*/
 }
 
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
+/*img {*/
+/*    height: 40px;*/
+/*    width: 50px;*/
+/*    border-radius: 5px;*/
+/*}*/
+
+.brown-color {
+    color: white;
+    font-weight: bolder;
 }
 
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
-}
+/*table {*/
+/*    border-collapse: collapse;*/
+/*    margin: 15px 0;*/
+/*}*/
+
+/*td, th {*/
+/*    border: 1px solid black;*/
+/*    padding: 5px 10px;*/
+/*}*/
 
 
 /*Coffee background*/
