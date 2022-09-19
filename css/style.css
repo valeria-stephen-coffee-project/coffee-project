@@ -18,14 +18,13 @@ main {
     margin: 1em;
 }
 
-.topTitle, .filterForm, .coffeeTable {
+.overlay {
     /*color: white;*/
-    background-color: white;
+    background-color: #e6e6e6;
     z-index: 10;
     position: relative;
+    opacity: 0.75;
 }
-
-
 
 table {
     border-collapse: collapse;

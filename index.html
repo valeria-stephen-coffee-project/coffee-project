@@ -13,19 +13,19 @@
 <body>
 
 <main>
-    <h1 class="topTitle text-center">Coffee!</h1>
+    <h1 class="topTitle text-center"><span class="overlay">Coffee!</span></h1>
 
     <form class="filterForm">
-        <label for="roast-selection"></label>
-        <select id="roast-selection">
+        <label for="roast-selection" class="overlay"></label>
+        <select id="roast-selection" class="overlay">
             <option>light</option>
             <option>medium</option>
             <option>dark</option>
         </select>
-        <input id="submitBtn" type="submit" />
+        <input id="submitBtn" type="submit" class="overlay" />
     </form>
 
-    <table class="coffeeTable">
+    <table class="coffeeTable overlay">
         <thead>
             <tr>
                 <th>ID</th>
