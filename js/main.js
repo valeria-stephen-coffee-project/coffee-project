@@ -2,11 +2,15 @@
 
 // Creating table row with coffee stats
 function renderCoffee(coffee) {
-    let html = '<tr class="coffee">';
-    html += '<td>' + coffee.id + '</td>';
-    html += '<td>' + coffee.name + '</td>';
-    html += '<td>' + coffee.roast + '</td>';
-    html += '</tr>';
+    let html = '' +
+        '<div class="col-md-4 col-12">' +
+        '<div class="card m-2">' +
+        '<div class="card-body">' +
+        '<div class="card-title text-center">' + coffee.name + '</div>' +
+        '<div class="card-subtitle text-muted text-center">' + coffee.roast + '</div>' +
+        '</div>' +
+        '</div>' +
+        '</div>';
 
     return html;
 }
@@ -14,8 +18,12 @@ function renderCoffee(coffee) {
 // Creating full coffee table
 function renderCoffees(coffees) {
     let html = '';
-    for(let i = coffees.length - 1; i >= 0; i--) {
-        html += renderCoffee(coffees[i]);
+    for(let i = 0; i < coffees.length; i++) {
+        coffees.forEach(coffee => {
+            if(coffee.id == i+1) {
+                html += renderCoffee(coffee);
+            }
+        });
     }
     return html;
 }
@@ -39,7 +47,7 @@ let coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
     {id: 2, name: 'Half City', roast: 'light'},
     {id: 3, name: 'Cinnamon', roast: 'light'},
-    {id: 4, name: 'City', roast: 'medium'},
+    {id: 14, name: 'City', roast: 'medium'},
     {id: 5, name: 'American', roast: 'medium'},
     {id: 6, name: 'Breakfast', roast: 'medium'},
     {id: 7, name: 'High', roast: 'dark'},
@@ -49,10 +57,10 @@ let coffees = [
     {id: 11, name: 'Espresso', roast: 'dark'},
     {id: 12, name: 'Viennese', roast: 'dark'},
     {id: 13, name: 'Italian', roast: 'dark'},
-    {id: 14, name: 'French', roast: 'dark'},
+    {id: 4, name: 'French', roast: 'dark'},
 ];
 
-let tbody = document.querySelector('#coffees');
+let tbody = document.querySelector('#coffeeDisplay');
 let submitButton = document.querySelector('#submitBtn');
 let roastSelection = document.querySelector('#roast-selection');
 
