@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@554&display=swap" rel="stylesheet">
 
-<!--    Fonts-->
+    <!-- Fonts -->
     <link rel=“preconnect” href=“https://fonts.googleapis.com”>
     <link rel=“preconnect” href=“https://fonts.gstatic.com” crossorigin>
     <link href=“https://fonts.googleapis.com/css2?family=Open+Sans&display=swap” rel=“stylesheet”>
@@ -23,12 +23,13 @@
 <body>
 
 <main>
-    <!-- Top nav bar-->
+    <!-- Top nav bar -->
     <nav class="navbar overlay">
         <div class="container-fluid">
-            <span class="display-3">COFFEE</span>
+            <span class="display-5">CANDID COFFEE</span>
 
             <!-- Navbar buttons -->
+            <!-- Buttons both inside div to keep them together on the right side of the page -->
             <div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#orderText" aria-controls="orderText" aria-expanded="false" aria-label="Toggle navigation">
                     <span>ORDER</span>
@@ -41,9 +42,7 @@
             <!-- Drop down for type of roast & text search for coffee name -->
             <div class="collapse navbar-collapse" id="orderText">
                 <div class="text-center my-2">
-<!--                <form class="navbar-nav me-auto mb-2 mb-lg-0">-->
                     <label for="roast-selection">Roast</label>
-
                     <!-- Filtering with change event listener in main.js -->
                     <select id="roast-selection" class= "black-text" autocomplete="off">
                         <option>all</option>
@@ -51,36 +50,24 @@
                         <option>medium</option>
                         <option>dark</option>
                     </select>
-
-<!--                    <label for="coffee-name" class="pt-3">Coffee Name</label>-->
-
                     <!-- Filtering with keyup event listener in main.js -->
                     <input id="coffee-name" type="text" class= "black-text" placeholder="Coffee Name" autocomplete="off">
-<!--                </form>-->
                 </div>
             </div>
 
             <!-- Drop down for adding a coffee -->
             <div class="collapse navbar-collapse" id="addText">
                 <div class="d-flex justify-content-center align-items-center">
-<!--                <form class="navbar-nav me-auto mb-2 mb-lg-0">-->
-
                     <label for="add-roast-selection" class="ms-1 d-none d-sm-block">Roast</label>
-
                     <!-- Filtering with change event listener in main.js -->
                     <select id="add-roast-selection" class="black-text ms-1" autocomplete="off">
                         <option>light</option>
                         <option>medium</option>
                         <option>dark</option>
                     </select>
-
-<!--                    <label for="add-coffee-name" class="overlay pt-3">Coffee Name</label>-->
-
                     <!-- Filtering with keyup event listener in main.js -->
                     <input id="add-coffee-name" class= "black-text ms-1" type="text" placeholder="Coffee Name" autocomplete="off">
-
                     <button id="add-coffee-btn" class="btn btn-light ms-1">Add</button>
-<!--                </form>-->
                 </div>
             </div>
         </div>
@@ -89,6 +76,8 @@
     <!-- Container for displaying each coffee. This shows all default coffees, and added coffees -->
     <div class="container-fluid row gx-0 overlay" id="coffeeDisplay"></div>
 </main>
+
+<!-- Video background -->
 <video autoplay muted loop class="coffeeLoop">
     <source src="video/coffee-beans.mp4">
 </video>

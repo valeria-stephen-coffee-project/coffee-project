@@ -1,29 +1,16 @@
 "use strict"
 
-// Creating table row with coffee stats
+// Creating table row with each coffee in coffees array
 function renderCoffee(coffee) {
     let html = '' +
         '<div class="col-sm-6 col-lg-4 col-12">' +
         '<div class="card text-variant bg-transparent border-0 mx-5 my-4">' +
         '<div class="card-body">' +
-        '<h2 class="card-title text-center brown-color">' + coffee.name + '</h2>' +
-        '<div class="card-subtitle text-center brown-color">' + coffee.roast + '</div>' +
+        '<h2 class="card-title text-center text-white">' + coffee.name + '</h2>' +
+        '<div class="card-subtitle text-center text-white">' + coffee.roast + '</div>' +
         '</div>' +
         '</div>' +
         '</div>';
-
-    // let html = '' +
-    //     '<div class="col-sm-6 col-lg-4 col-12">' +
-    //     '<b-card ' +
-    //     'overlay ' +
-    //     'img-src="../img/milk-coffee-pic.jpg" ' +
-    //     'text-variant="white" ' +
-    //     'title="' + coffee.name + '"' +
-    //     '>' +
-    //     '<b-card-text>' + coffee.roast + '</b-card-text>' +
-    //     '</b-card>' +
-    //     '</div>';
-
     return html;
 }
 
@@ -38,7 +25,7 @@ function renderCoffees(coffees) {
 
 // Updates what coffees are shown on coffee table
 function updateCoffees(e) {
-    e.preventDefault(); // don't submit the form, we just want to update the data
+    e.preventDefault();
     let selectedRoast = roastSelection.value;
     let coffeeName = coffeeSearch.value;
     let filteredCoffees = [];
@@ -50,6 +37,7 @@ function updateCoffees(e) {
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
+// Adds coffee to coffees array and updates both local storage and renders coffees
 function addCoffee(e) {
     e.preventDefault();
     let id = coffees.length + 1;
@@ -57,19 +45,34 @@ function addCoffee(e) {
     let roast = addRoastType.value;
     coffees.push({id, name, roast});
 
+    // Resets add coffee text box to empty
+    addCoffeeName.value = "";
+
+    // Renders coffees array on page with new coffee
     tbody.innerHTML = renderCoffees(coffees);
 
+    // Saves updated coffees array to local storage
     localStorage.coffees = JSON.stringify(coffees);
+
+    // Calls updateCoffees when adding new coffee to keep filters in place
+    updateCoffees(e);
 }
 
-// Coffee names and types to populate coffee list
-// from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
+// Checks to see if user types enter in add coffee text box
+function checkIfEnter(e) {
+    e.preventDefault();
+    if(e.keyCode == 13) {
+        addCoffee(e);
+    }
+}
 
-// initialzing coffees array. if local storage is empty, sets default coffees array
+// initializing coffees array. if local storage is empty, sets default coffees array
 let coffees = [];
 try {
     coffees = JSON.parse(localStorage.coffees);
 } catch (error) {
+    // Coffee names and types to populate coffee list
+    // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
     coffees = [
         {id: 1, name: 'Light City', roast: 'light'},
         {id: 2, name: 'Half City', roast: 'light'},
@@ -88,18 +91,23 @@ try {
     ];
 }
 
-
+// Setting js variables attached to certain html elements on the page
 let tbody = document.querySelector('#coffeeDisplay');
-// let submitButton = document.querySelector('#submitBtn');
 let roastSelection = document.querySelector('#roast-selection');
 let coffeeSearch = document.querySelector('#coffee-name');
 let addRoastType = document.querySelector('#add-roast-selection');
 let addCoffeeName = document.querySelector('#add-coffee-name');
 let addButton = document.querySelector('#add-coffee-btn');
 
+// First rendering of coffees array onto the html form
 tbody.innerHTML = renderCoffees(coffees);
 
-// submitButton.addEventListener('click', updateCoffees);
+// Event Listeners
 roastSelection.addEventListener('change', updateCoffees);
 coffeeSearch.addEventListener('keyup', updateCoffees);
+addCoffeeName.addEventListener('keyup', checkIfEnter);
 addButton.addEventListener('click', addCoffee);
+
+// Line of code to clear the local storage if it gets out of hand
+// WARNING: ONLY UNCOMMENT LINE BELOW IF YOU WANT THE COFFEES ARRAY BACK TO DEFAULT
+// localStorage.clear();
