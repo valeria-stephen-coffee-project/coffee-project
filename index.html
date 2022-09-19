@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Coffee Project</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="img/coffee-cup-icon.png">
 
 <!--    Fonts-->
     <link rel=“preconnect” href=“https://fonts.googleapis.com”>
@@ -18,28 +19,65 @@
 <body>
 
 <main>
-    <!--Top nav bar-->
+    <!-- Top nav bar-->
     <nav class="navbar bg-light overlay">
         <div class="container-fluid">
             <span class="display-3">Coffee!</span>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span>Order online</span>
-            </button>
-            <!--Drop down for type of roast & text search for coffee name-->
-            <div class="collapse navbar-collapse" id="navbarText">
+
+            <!-- Navbar buttons -->
+            <div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#orderText" aria-controls="orderText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span>Order online</span>
+                </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#addText" aria-controls="addText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span>Add a Coffee</span>
+                </button>
+            </div>
+
+            <!-- Drop down for type of roast & text search for coffee name -->
+            <div class="collapse navbar-collapse" id="orderText">
                 <form class="navbar-nav me-auto mb-2 mb-lg-0">
                     <label for="roast-selection" class="overlay">Roast</label>
+
+                    <!-- Filtering with change event listener in main.js -->
                     <select id="roast-selection" class="overlay" autocomplete="off">
+                        <option>all</option>
                         <option>light</option>
                         <option>medium</option>
                         <option>dark</option>
                     </select>
+
                     <label for="coffee-name" class="overlay pt-3">Coffee Name</label>
-                    <input id="coffee-name" type="text" placeholder="Coffee Name">
+
+                    <!-- Filtering with keyup event listener in main.js -->
+                    <input id="coffee-name" type="text" placeholder="Coffee Name" autocomplete="off">
+                </form>
+            </div>
+
+            <!-- Drop down for adding a coffee -->
+            <div class="collapse navbar-collapse" id="addText">
+                <form class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <label for="add-roast-selection" class="overlay">Roast</label>
+
+                    <!-- Filtering with change event listener in main.js -->
+                    <select id="add-roast-selection" class="overlay" autocomplete="off">
+                        <option>light</option>
+                        <option>medium</option>
+                        <option>dark</option>
+                    </select>
+
+                    <label for="add-coffee-name" class="overlay pt-3">Coffee Name</label>
+
+                    <!-- Filtering with keyup event listener in main.js -->
+                    <input id="add-coffee-name" type="text" placeholder="Coffee Name" autocomplete="off">
+
+                    <button id="add-coffee-btn" class="btn btn-primary">Add</button>
                 </form>
             </div>
         </div>
     </nav>
+
+    <!-- Container for displaying each coffee. This shows all default coffees, and added coffees -->
     <div class="container-fluid row gx-0 overlay" id="coffeeDisplay"></div>
 </main>
 <video autoplay muted loop class="coffeeLoop">
