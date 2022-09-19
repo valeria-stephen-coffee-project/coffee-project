@@ -1,5 +1,6 @@
 "use strict"
 
+// Creating table row with coffee stats
 function renderCoffee(coffee) {
     let html = '<tr class="coffee">';
     html += '<td>' + coffee.id + '</td>';
@@ -10,6 +11,7 @@ function renderCoffee(coffee) {
     return html;
 }
 
+// Creating full coffee table
 function renderCoffees(coffees) {
     let html = '';
     for(let i = coffees.length - 1; i >= 0; i--) {
@@ -18,6 +20,7 @@ function renderCoffees(coffees) {
     return html;
 }
 
+// Updates what coffees are shown on coffee table
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     let selectedRoast = roastSelection.value;
@@ -30,6 +33,7 @@ function updateCoffees(e) {
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
+// Coffee names and types to populate coffee list
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 let coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
@@ -49,7 +53,7 @@ let coffees = [
 ];
 
 let tbody = document.querySelector('#coffees');
-let submitButton = document.querySelector('#submit');
+let submitButton = document.querySelector('#submitBtn');
 let roastSelection = document.querySelector('#roast-selection');
 
 tbody.innerHTML = renderCoffees(coffees);
