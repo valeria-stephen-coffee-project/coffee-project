@@ -7,9 +7,9 @@ html {
 }
 
 body {
-    /*position: relative;*/
+    position: relative;
     /*margin: 0;*/
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 main {
@@ -17,6 +17,11 @@ main {
     height: 100vh;
     /*margin: 1em;*/
 }
+
+
+/*.navbar {*/
+/*    padding-top: 2rem;*/
+/*}*/
 
 #coffeeDisplay{
     margin-right: 0;

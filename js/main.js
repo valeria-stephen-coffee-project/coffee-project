@@ -19,11 +19,11 @@ function renderCoffee(coffee) {
 function renderCoffees(coffees) {
     let html = '';
     for(let i = 0; i < coffees.length; i++) {
-        coffees.forEach(coffee => {
-            if(coffee.id == i+1) {
-                html += renderCoffee(coffee);
-            }
-        });
+        // coffees.forEach(coffee => {
+        //     if(coffee.id == i+1) {
+                html += renderCoffee(coffees[i]);
+        //     }
+        // });
     }
     return html;
 }
@@ -47,7 +47,7 @@ let coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
     {id: 2, name: 'Half City', roast: 'light'},
     {id: 3, name: 'Cinnamon', roast: 'light'},
-    {id: 14, name: 'City', roast: 'medium'},
+    {id: 4, name: 'City', roast: 'medium'},
     {id: 5, name: 'American', roast: 'medium'},
     {id: 6, name: 'Breakfast', roast: 'medium'},
     {id: 7, name: 'High', roast: 'dark'},
@@ -57,13 +57,14 @@ let coffees = [
     {id: 11, name: 'Espresso', roast: 'dark'},
     {id: 12, name: 'Viennese', roast: 'dark'},
     {id: 13, name: 'Italian', roast: 'dark'},
-    {id: 4, name: 'French', roast: 'dark'},
+    {id: 14, name: 'French', roast: 'dark'},
 ];
 
 let tbody = document.querySelector('#coffeeDisplay');
-let submitButton = document.querySelector('#submitBtn');
+// let submitButton = document.querySelector('#submitBtn');
 let roastSelection = document.querySelector('#roast-selection');
 
 tbody.innerHTML = renderCoffees(coffees);
 
-submitButton.addEventListener('click', updateCoffees);
+// submitButton.addEventListener('click', updateCoffees);
+roastSelection.addEventListener('change', updateCoffees);

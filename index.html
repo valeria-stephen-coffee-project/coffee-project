@@ -17,33 +17,30 @@
 </head>
 <body>
 
-<main class="text-center">
-    <h1 class="topTitle text-center"><span class="overlay">Coffee!</span></h1>
-
-    <form class="filterForm">
-        <label for="roast-selection" class="overlay"></label>
-        <select id="roast-selection" class="overlay">
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
-        </select>
-        <input id="submitBtn" type="submit" class="overlay" />
-    </form>
-
-    <div class="container-fluid row gx-0 overlay" id="coffeeDisplay">
-
-    </div>
-
-<!--    <table class="coffeeTable overlay">-->
-<!--        <thead>-->
-<!--            <tr>-->
-<!--                <th>ID</th>-->
-<!--                <th>NAME</th>-->
-<!--                <th>ROAST</th>-->
-<!--            </tr>-->
-<!--        </thead>-->
-<!--        <tbody id="coffees"></tbody>-->
-<!--    </table>-->
+<main>
+    <!--Top nav bar-->
+    <nav class="navbar bg-light overlay">
+        <div class="container-fluid">
+            <span class="display-3">Coffee!</span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span>Order online</span>
+            </button>
+            <!--Drop down for type of roast & text search for coffee name-->
+            <div class="collapse navbar-collapse" id="navbarText">
+                <form class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <label for="roast-selection" class="overlay">Roast</label>
+                    <select id="roast-selection" class="overlay" autocomplete="off">
+                        <option>light</option>
+                        <option>medium</option>
+                        <option>dark</option>
+                    </select>
+                    <label for="coffee-name" class="overlay pt-3">Coffee Name</label>
+                    <input id="coffee-name" type="text" placeholder="Coffee Name">
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid row gx-0 overlay" id="coffeeDisplay"></div>
 </main>
 <video autoplay muted loop class="coffeeLoop">
     <source src="video/coffee-beans.mp4">
