@@ -5,6 +5,8 @@ function renderCoffee(coffee) {
     let html = '' +
         '<div class="col-sm-6 col-lg-4 col-12 px-2">' +
         '<div class="card text-variant bg-transparent border-0 mx-5 my-4 ';
+
+    // Adding roast specific classes to html string
     if(coffee.roast == 'light') {
         html += 'light-roast-bg';
     } else if(coffee.roast == 'medium') {
@@ -12,6 +14,8 @@ function renderCoffee(coffee) {
     } else {
         html += 'dark-roast-bg';
     }
+
+    // Finishing html string
     html += '">' +
         '<div class="card-body">' +
         '<h2 class="card-title text-center text-shadow">' + coffee.name + '</h2>' +
@@ -25,6 +29,8 @@ function renderCoffee(coffee) {
 // Creating full coffee table
 function renderCoffees(coffees) {
     let html = '';
+
+    // Iterating through coffees array and rendering each coffee individually, adding string to our full html string
     for(let i = 0; i < coffees.length; i++) {
         html += renderCoffee(coffees[i]);
     }
@@ -42,12 +48,16 @@ function updateCoffees(e) {
             filteredCoffees.push(coffee);
         }
     });
+
+    // Renders filtered coffees array and replaces the tbody html with new content
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
 // Adds coffee to coffees array and updates both local storage and renders coffees
 function addCoffee(e) {
     e.preventDefault();
+
+    // Setting variables for new coffee to go into the coffees array
     let id = coffees.length + 1;
     let name = addCoffeeName.value;
     let roast = addRoastType.value;
@@ -107,14 +117,14 @@ let addRoastType = document.querySelector('#add-roast-selection');
 let addCoffeeName = document.querySelector('#add-coffee-name');
 let addButton = document.querySelector('#add-coffee-btn');
 
-// First rendering of coffees array onto the html form
-tbody.innerHTML = renderCoffees(coffees);
-
 // Event Listeners
 roastSelection.addEventListener('change', updateCoffees);
 coffeeSearch.addEventListener('keyup', updateCoffees);
 addCoffeeName.addEventListener('keyup', checkIfEnter);
 addButton.addEventListener('click', addCoffee);
+
+// First rendering of coffees array onto the html form
+tbody.innerHTML = renderCoffees(coffees);
 
 // Line of code to clear the local storage if it gets out of hand
 // WARNING: ONLY UNCOMMENT LINE BELOW IF YOU WANT THE COFFEES ARRAY BACK TO DEFAULT

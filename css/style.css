@@ -1,17 +1,14 @@
 html {
     box-sizing: border-box;
 }
-
 *, *:before, *:after {
     box-sizing: inherit;
     font-family: 'Open sans', sans-serif;
     color: navajowhite;
 }
-
 body {
     position: relative;
 }
-
 main {
     position: relative;
     height: 100vh;
@@ -34,6 +31,7 @@ main {
     color: black;
 }
 
+/*Adding black outline to text to make it readable against similar color background*/
 .text-shadow {
     text-shadow:
             -1px -1px 0 #000,
@@ -48,14 +46,13 @@ main {
     cursor: url("../img/coffee-cup-cursor.png"), auto;
 }
 
+/*Image offset to make the background cards visually match the roast*/
 .light-roast-bg {
     background-position: right 100px;
 }
-
 .medium-roast-bg {
-    background-position: right 150px;
+    background-position: right 165px;
 }
-
 .dark-roast-bg {
     background-position: right 225px;
 }
