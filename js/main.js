@@ -3,11 +3,19 @@
 // Creating table row with each coffee in coffees array
 function renderCoffee(coffee) {
     let html = '' +
-        '<div class="col-sm-6 col-lg-4 col-12">' +
-        '<div class="card text-variant bg-transparent border-0 mx-5 my-4">' +
+        '<div class="col-sm-6 col-lg-4 col-12 px-2">' +
+        '<div class="card text-variant bg-transparent border-0 mx-5 my-4 ';
+    if(coffee.roast == 'light') {
+        html += 'light-roast-bg';
+    } else if(coffee.roast == 'medium') {
+        html += 'medium-roast-bg';
+    } else {
+        html += 'dark-roast-bg';
+    }
+    html += '">' +
         '<div class="card-body">' +
-        '<h2 class="card-title text-center text-white">' + coffee.name + '</h2>' +
-        '<div class="card-subtitle text-center text-white">' + coffee.roast + '</div>' +
+        '<h2 class="card-title text-center text-shadow">' + coffee.name + '</h2>' +
+        '<div class="card-subtitle text-center text-shadow">' + coffee.roast + '</div>' +
         '</div>' +
         '</div>' +
         '</div>';

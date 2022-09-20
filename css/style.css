@@ -1,6 +1,5 @@
 html {
     box-sizing: border-box;
-    cursor: url("../img/coffee-cup-cursor.png"), auto;
 }
 
 *, *:before, *:after {
@@ -35,14 +34,31 @@ main {
     color: black;
 }
 
+.text-shadow {
+    text-shadow:
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
+}
+
 /*Cream background image on cards*/
 .card {
     background-image: url("/img/milk-coffee-pic.jpg");
-    background-size: cover;
+    cursor: url("../img/coffee-cup-cursor.png"), auto;
 }
-/*.card:hover {*/
-/*    cursor: url("../img/coffee-cup-icon.png"), auto;*/
-/*}*/
+
+.light-roast-bg {
+    background-position: right 100px;
+}
+
+.medium-roast-bg {
+    background-position: right 150px;
+}
+
+.dark-roast-bg {
+    background-position: right 225px;
+}
 
 /*Coffee background video*/
 .coffeeLoop {
